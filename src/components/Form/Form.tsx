@@ -45,23 +45,23 @@ const Form: React.FC<FormProps> = ({ handleAdd, transactionsList, setTransaction
 
   return (
     <>
-      <div className="container">
-        <div className="inputContent">
+      <C.Container>
+        <C.InputContent>
           <label>Categoria</label>
-          <input
+          <C.Input
             value={desc}
             onChange={(e) => setDesc(e.target.value)}
           />
-        </div>
-        <div className="inputContent">
+        </C.InputContent>
+        <C.InputContent>
           <label>Valor</label>
-          <input
+          <C.Input
             value={amount}
             type="number"
             onChange={(e) => setAmount(e.target.value)}
           />
-        </div>
-        <div className="radioGroup">
+        </C.InputContent>
+        <C.RadioGroup>
           <input
             type="radio"
             id="rIncome"
@@ -77,9 +77,9 @@ const Form: React.FC<FormProps> = ({ handleAdd, transactionsList, setTransaction
             onChange={() => setExpense(!isExpense)}
           />
           <label htmlFor="rExpenses">Saída</label>
-        </div>
-        <button className="button" onClick={handleSave}>ADICIONAR</button>
-      </div>
+        </C.RadioGroup>
+        <C.Button onClick={handleSave}>ADICIONAR</C.Button>
+      </C.Container>
       <Grid itens={transactionsList} setItens={setTransactionsList} />
     </>
   );
